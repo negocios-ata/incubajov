@@ -1,0 +1,30 @@
+PDL IncubaJov — Web de servicios
+================================
+
+Contenido del paquete:
+  - index.html  ->  La página web completa
+  - logo.png    ->  Logotipo oficial (usado en la web)
+  - banner.png  ->  Imagen con los datos de ubicación y contacto
+  - LEEME.txt   ->  Este archivo
+
+Cómo usarla:
+  1) Descomprime la carpeta completa (no separes los archivos: la web
+     necesita que logo.png y banner.png estén en la misma carpeta).
+  2) Abre "index.html" con doble clic en cualquier navegador (Chrome,
+     Edge, Firefox) y ya se verá la página.
+
+Cómo publicarla en internet (opcional):
+  - Sube TODO el contenido de la carpeta al hosting que uses
+    (Netlify, Vercel, GitHub Pages, Hostinger, etc.).
+  - El archivo principal debe llamarse "index.html".
+
+Botón de WhatsApp:
+  Cada servicio tiene su propio botón que abre el chat al +53 50963247
+  con el mensaje "Hola, estoy interesado en el servicio de ... en PDL
+  IncubaJov". Para cambiar el número, edita la línea:
+      const WA_NUMBER = "5350963247";
+  dentro de index.html.
+
+Datos incluidos: teléfono +53 5 0963247, correo incubajov@proton.me,
+Facebook facebook.com/incubajov, dirección Calle 17 e/ 20 y 22 #2002,
+Jovellanos, Matanzas.

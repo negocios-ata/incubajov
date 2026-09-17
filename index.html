@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PDL IncubaJov | Incubadora de Negocios Jovellanos</title>
+<meta name="description" content="PDL Incubadora de Negocios Jovellanos. De la idea al negocio, en Jovellanos. Formacion, asesoramiento y acompanamiento para emprendedores.">
+<link rel="icon" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --azul:#0f3576;
+  --azul-2:#1a4b9c;
+  --azul-claro:#29a3dc;
+  --naranja:#ef7c1b;
+  --naranja-2:#d96a0e;
+  --crema:#f5f7fb;
+  --texto:#1c2434;
+  --gris:#5c6a82;
+  --wa:#25d366;
+  --wa-2:#128c7e;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;color:var(--texto);background:#fff;line-height:1.6;overflow-x:hidden}
+h1,h2,h3,h4,.brand,.btn{font-family:'Montserrat',sans-serif}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+.wrap{width:min(1180px,92%);margin:0 auto}
+
+/* ---------- TOPBAR ---------- */
+.topbar{background:var(--azul);color:#dbe6f7;font-size:.82rem}
+.topbar .wrap{display:flex;flex-wrap:wrap;gap:6px 26px;justify-content:space-between;align-items:center;padding:8px 0}
+.topbar span{display:inline-flex;align-items:center;gap:7px}
+.topbar svg{width:14px;height:14px;flex:none}
+.topbar a:hover{color:#fff}
+
+/* ---------- HEADER ---------- */
+header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid #e6ebf4;transition:.3s}
+header.scrolled{box-shadow:0 8px 30px rgba(15,53,118,.10)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:10px 0}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{height:64px;width:auto}
+.brand-txt strong{display:block;font-size:1.02rem;color:var(--azul);font-weight:800;line-height:1.15}
+.brand-txt small{color:var(--naranja);font-weight:700;font-size:.74rem;letter-spacing:.06em;text-transform:uppercase}
+.menu{display:flex;align-items:center;gap:26px;font-weight:600;font-size:.93rem}
+.menu a{color:var(--azul);position:relative;padding:4px 0}
+.menu a::after{content:"";position:absolute;left:0;bottom:-2px;height:3px;width:0;background:var(--naranja);border-radius:3px;transition:.3s}
+.menu a:hover::after{width:100%}
+.nav-cta{display:inline-flex;align-items:center;gap:8px;background:var(--wa);color:#fff;font-weight:700;padding:11px 20px;border-radius:50px;font-size:.88rem;box-shadow:0 8px 20px rgba(37,211,102,.35);transition:.25s}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(37,211,102,.45)}
+.burger{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:8px}
+.burger span{width:26px;height:3px;background:var(--azul);border-radius:3px;transition:.3s}
+
+/* ---------- HERO ---------- */
+.hero{position:relative;background:linear-gradient(135deg,#0b2a5e 0%,#123f8a 45%,#1a56ad 100%);color:#fff;overflow:hidden}
+.hero::before{content:"";position:absolute;width:640px;height:640px;border-radius:50%;background:radial-gradient(circle,rgba(41,163,220,.45),transparent 68%);top:-260px;right:-180px}
+.hero::after{content:"";position:absolute;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(239,124,27,.35),transparent 68%);bottom:-260px;left:-160px}
+.hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center;padding:74px 0 84px}
+.hero-tag{display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.24);padding:7px 16px;border-radius:50px;font-size:.79rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:22px}
+.hero-tag i{width:8px;height:8px;border-radius:50%;background:var(--naranja);box-shadow:0 0 0 5px rgba(239,124,27,.28)}
+.hero h1{font-size:clamp(2rem,4.3vw,3.35rem);font-weight:900;line-height:1.08;letter-spacing:-.02em}
+.hero h1 em{font-style:normal;color:#ffb263;position:relative}
+.hero h1 em::after{content:"";position:absolute;left:0;right:0;bottom:4px;height:9px;background:rgba(255,178,99,.28);border-radius:6px;z-index:-1}
+.hero p{margin:22px 0 34px;font-size:1.08rem;color:#d7e3f8;max-width:520px}
+.hero-btns{display:flex;flex-wrap:wrap;gap:14px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 30px;border-radius:50px;font-weight:700;font-size:.95rem;transition:.28s;border:2px solid transparent}
+.btn-primary{background:var(--naranja);color:#fff;box-shadow:0 14px 32px rgba(239,124,27,.42)}
+.btn-primary:hover{background:var(--naranja-2);transform:translateY(-3px)}
+.btn-ghost{border-color:rgba(255,255,255,.5);color:#fff}
+.btn-ghost:hover{background:#fff;color:var(--azul);border-color:#fff}
+.hero-card{background:rgba(255,255,255,.97);border-radius:26px;padding:16px;box-shadow:0 30px 70px rgba(4,18,45,.45);transform:rotate(-1.5deg)}
+.hero-card img{border-radius:16px;width:100%}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:46px;max-width:560px}
+.hero-stats b{display:block;font-family:'Montserrat';font-size:1.7rem;font-weight:900;color:#ffb263}
+.hero-stats span{font-size:.79rem;color:#c3d3ef;letter-spacing:.03em}
+
+/* ---------- SECTION ---------- */
+section{padding:92px 0}
+.sec-head{text-align:center;max-width:720px;margin:0 auto 56px}
+.sec-kicker{display:inline-block;color:var(--naranja);font-weight:800;letter-spacing:.14em;text-transform:uppercase;font-size:.78rem;margin-bottom:12px}
+.sec-head h2{font-size:clamp(1.7rem,3.3vw,2.5rem);font-weight:900;color:var(--azul);letter-spacing:-.02em;line-height:1.15}
+.sec-head p{color:var(--gris);margin-top:16px;font-size:1.03rem}
+
+/* ---------- SERVICES ---------- */
+#servicios{background:var(--crema)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.card{background:#fff;border-radius:22px;padding:34px 30px 30px;position:relative;overflow:hidden;border:1px solid #e8edf7;transition:.32s;display:flex;flex-direction:column}
+.card::before{content:"";position:absolute;inset:0 0 auto 0;height:5px;background:linear-gradient(90deg,var(--azul-claro),var(--naranja));transform:scaleX(0);transform-origin:left;transition:.4s}
+.card:hover{transform:translateY(-8px);box-shadow:0 26px 55px rgba(15,53,118,.14);border-color:transparent}
+.card:hover::before{transform:scaleX(1)}
+.card .num{position:absolute;top:18px;right:24px;font-family:'Montserrat';font-weight:900;font-size:2.6rem;color:#eef3fb}
+.icon{width:60px;height:60px;border-radius:18px;display:grid;place-items:center;background:linear-gradient(135deg,#e9f2ff,#dbeaff);margin-bottom:20px;transition:.32s}
+.icon svg{width:29px;height:29px;stroke:var(--azul);fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.card:hover .icon{background:linear-gradient(135deg,var(--azul),var(--azul-2))}
+.card:hover .icon svg{stroke:#fff}
+.card h3{font-size:1.15rem;font-weight:800;color:var(--azul);margin-bottom:10px;position:relative;z-index:2}
+.card p{color:var(--gris);font-size:.92rem;flex:1;position:relative;z-index:2;margin-bottom:22px}
+.wa-btn{display:inline-flex;align-items:center;gap:10px;justify-content:center;background:var(--wa);color:#fff;font-weight:700;font-size:.88rem;padding:13px 20px;border-radius:14px;transition:.26s;box-shadow:0 8px 20px rgba(37,211,102,.28);position:relative;z-index:2}
+.wa-btn:hover{background:var(--wa-2);transform:translateY(-2px);box-shadow:0 12px 26px rgba(37,211,102,.38)}
+.wa-btn svg{width:18px;height:18px;fill:#fff}
+
+/* ---------- ABOUT ---------- */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.about-img{border-radius:26px;overflow:hidden;box-shadow:0 30px 65px rgba(15,53,118,.20);border:1px solid #e6ebf4}
+.about h2{font-size:clamp(1.7rem,3.2vw,2.4rem);font-weight:900;color:var(--azul);margin-bottom:18px;line-height:1.16}
+.about h2 em{font-style:normal;color:var(--naranja)}
+.about p{color:var(--gris);margin-bottom:16px}
+.check{list-style:none;margin-top:26px;display:grid;gap:13px}
+.check li{display:flex;gap:12px;align-items:flex-start;font-weight:600;color:var(--azul);font-size:.95rem}
+.check svg{width:22px;height:22px;flex:none;margin-top:2px;fill:none;stroke:var(--naranja);stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+
+/* ---------- CONTACT ---------- */
+.contact{background:linear-gradient(135deg,#0b2a5e,#17458f);color:#fff;position:relative;overflow:hidden}
+.contact::before{content:"";position:absolute;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(41,163,220,.35),transparent 70%);top:-200px;left:-140px}
+.contact .wrap{position:relative;z-index:2}
+.contact .sec-head h2{color:#fff}
+.contact .sec-head p{color:#c8d7f0}
+.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:960px;margin:0 auto}
+.info{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:20px;padding:30px 26px;text-align:center;transition:.3s}
+.info:hover{background:rgba(255,255,255,.14);transform:translateY(-5px)}
+.info .ico{width:52px;height:52px;margin:0 auto 16px;border-radius:15px;background:rgba(239,124,27,.22);display:grid;place-items:center}
+.info .ico svg{width:25px;height:25px;stroke:#ffb263;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.info h4{font-size:1rem;font-weight:800;margin-bottom:6px}
+.info p,.info a{color:#c9d8f1;font-size:.9rem;word-break:break-word}
+.info a:hover{color:#fff}
+.cta-band{margin-top:60px;background:#fff;border-radius:24px;padding:38px 44px;display:flex;flex-wrap:wrap;gap:22px;align-items:center;justify-content:space-between;color:var(--azul);box-shadow:0 30px 60px rgba(4,18,45,.3)}
+.cta-band h3{font-size:1.35rem;font-weight:900}
+.cta-band p{color:var(--gris);font-size:.93rem;margin-top:4px}
+
+/* ---------- FOOTER ---------- */
+footer{background:#081d40;color:#9db1d4;padding:52px 0 26px;font-size:.9rem}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding-bottom:34px;border-bottom:1px solid rgba(255,255,255,.1)}
+.foot-brand{display:flex;align-items:center;gap:14px;margin-bottom:16px}
+.foot-brand img{height:70px;background:#fff;padding:8px;border-radius:14px}
+.foot-grid h5{color:#fff;font-family:'Montserrat';font-size:.95rem;font-weight:800;margin-bottom:16px}
+.foot-grid ul{list-style:none;display:grid;gap:10px}
+.foot-grid a:hover{color:#ffb263}
+.foot-bottom{text-align:center;padding-top:22px;font-size:.83rem;color:#7d92b8}
+.foot-bottom strong{color:#ffb263}
+
+/* ---------- FLOATING WA ---------- */
+.float-wa{position:fixed;right:22px;bottom:24px;z-index:80;width:62px;height:62px;border-radius:50%;background:var(--wa);display:grid;place-items:center;box-shadow:0 14px 32px rgba(37,211,102,.5);animation:pulse 2.4s infinite;transition:.3s}
+.float-wa:hover{transform:scale(1.09)}
+.float-wa svg{width:32px;height:32px;fill:#fff}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.55)}70%{box-shadow:0 0 0 20px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+
+/* ---------- REVEAL ---------- */
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .7s ease,transform .7s ease}
+.reveal.vis{opacity:1;transform:none}
+
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:1000px){
+  .hero .wrap{grid-template-columns:1fr;gap:40px;padding:56px 0 64px}
+  .hero-card{max-width:460px;transform:none}
+  .cards{grid-template-columns:repeat(2,1fr)}
+  .about-grid{grid-template-columns:1fr;gap:38px}
+  .info-grid{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:760px){
+  .menu{position:fixed;inset:0 0 0 auto;width:78%;max-width:320px;background:#fff;flex-direction:column;align-items:flex-start;padding:100px 30px;gap:22px;transform:translateX(102%);transition:.35s;box-shadow:-14px 0 45px rgba(15,53,118,.2)}
+  .menu.open{transform:none}
+  .burger{display:flex;z-index:70}
+  .nav-cta{display:none}
+  .cards{grid-template-columns:1fr}
+  .topbar .wrap{justify-content:center;font-size:.76rem}
+  .cta-band{padding:30px 26px}
+  section{padding:66px 0}
+  .foot-grid{grid-template-columns:1fr;gap:30px}
+}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="wrap">
+    <span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.7a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.9 2.2z"/></svg>
+      <a href="tel:+5350963247">+53 5 0963247</a>
+    </span>
+    <span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16v16H4z"/><path d="m4 6 8 6 8-6"/></svg>
+      <a href="mailto:incubajov@proton.me">incubajov@proton.me</a>
+    </span>
+    <span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      Calle 17 e/ 20 y 22 #2002, Jovellanos, Matanzas
+    </span>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header id="header">
+  <div class="wrap nav">
+    <a href="#inicio" class="brand">
+      <img src="logo.png" alt="Logo PDL Incubadora de Negocios Jovellanos">
+      <span class="brand-txt">
+        <strong>PDL IncubaJov</strong>
+        <small>Jovellanos, Matanzas</small>
+      </span>
+    </a>
+    <nav class="menu" id="menu">
+      <a href="#inicio">Inicio</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <a class="nav-cta" href="https://wa.me/5350963247?text=Hola%2C%20estoy%20interesado%20en%20los%20servicios%20de%20PDL%20IncubaJov." target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="#fff"><path d="M17.5 14.4c-.3-.2-1.8-.9-2-1s-.5-.2-.7.2-.8 1-.9 1.2-.3.2-.6 0a8 8 0 0 1-2.4-1.5 9 9 0 0 1-1.6-2c-.2-.3 0-.5.1-.6l.5-.6c.2-.2.2-.3.3-.5s0-.4 0-.5l-.9-2.1c-.2-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.6 3.6 0 0 0-1.1 2.7 6.3 6.3 0 0 0 1.3 3.3 13.7 13.7 0 0 0 5.5 4.8 6.4 6.4 0 0 0 3.9.6 3.3 3.3 0 0 0 2.2-1.5 2.7 2.7 0 0 0 .2-1.5c-.1-.1-.3-.2-.6-.3z"/><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-2.9.8.8-2.8-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>
+      Escríbenos
+    </a>
+    <button class="burger" id="burger" aria-label="Menú"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="wrap">
+    <div>
+      <span class="hero-tag"><i></i> Incubadora de Negocios Jovellanos</span>
+      <h1>De la idea al <em>negocio</em>, en Jovellanos.</h1>
+      <p>Acompañamos a emprendedores y nuevos actores económicos con formación, asesoría legal, financiera y contable, para que tu proyecto crezca con bases sólidas.</p>
+      <div class="hero-btns">
+        <a class="btn btn-primary" href="#servicios">Ver nuestros servicios</a>
+        <a class="btn btn-ghost" href="https://wa.me/5350963247?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20los%20servicios%20de%20PDL%20IncubaJov." target="_blank" rel="noopener">Hablar por WhatsApp</a>
+      </div>
+      <div class="hero-stats">
+        <div><b>8</b><span>Servicios de acompañamiento</span></div>
+        <div><b>100%</b><span>Apoyo a emprendedores</span></div>
+        <div><b>Jov.</b><span>Compromiso local</span></div>
+      </div>
+    </div>
+    <div class="hero-card">
+      <img src="logo.png" alt="PDL Incubadora de Negocios Jovellanos IncubaJov">
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section id="servicios">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-kicker">Nuestros servicios</span>
+      <h2>Todo lo que necesitas para emprender</h2>
+      <p>Elige el servicio que te interesa y contáctanos directamente por WhatsApp. Te atenderemos paso a paso.</p>
+    </div>
+    <div class="cards" id="cards"></div>
+  </div>
+</section>
+
+<!-- NOSOTROS -->
+<section id="nosotros">
+  <div class="wrap about-grid">
+    <div class="about-img reveal">
+      <img src="banner.png" alt="Datos de contacto y ubicación de PDL Incubadora de Negocios Jovellanos">
+    </div>
+    <div class="about reveal">
+      <span class="sec-kicker">Quiénes somos</span>
+      <h2>Impulsamos el talento y los <em>negocios</em> de Jovellanos</h2>
+      <p>PDL Incubadora de Negocios Jovellanos (IncubaJov) es un espacio de acompañamiento para que las ideas de nuestros emprendedores se conviertan en proyectos reales, sostenibles y bien estructurados.</p>
+      <p>Trabajamos junto a los nuevos actores económicos en cada etapa: desde la conformación legal y financiera hasta la búsqueda de alianzas con otras instituciones, incubadoras y parques científicos.</p>
+      <ul class="check">
+        <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Formación y capacitación para emprendedores</li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Asesoría jurídica, contable y financiera</li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Acompañamiento durante todo el proceso</li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Gestión de alianzas e intercambios</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="contact" id="contacto">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-kicker">Contáctanos</span>
+      <h2>Estamos para ayudarte</h2>
+      <p>Visítanos, llámanos o escríbenos por WhatsApp. Con gusto te orientamos.</p>
+    </div>
+    <div class="info-grid">
+      <div class="info reveal">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.7a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.9 2.2z"/></svg></div>
+        <h4>Teléfono / WhatsApp</h4>
+        <a href="tel:+5350963247">+53 5 0963247</a>
+      </div>
+      <div class="info reveal">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <h4>Dirección</h4>
+        <p>Calle 17 entre 20 y 22 #2002<br>Jovellanos, Matanzas</p>
+      </div>
+      <div class="info reveal">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="m4 6 8 6 8-6"/></svg></div>
+        <h4>Correo y redes</h4>
+        <a href="mailto:incubajov@proton.me">incubajov@proton.me</a><br>
+        <a href="https://www.facebook.com/incubajov/" target="_blank" rel="noopener">facebook.com/incubajov</a>
+      </div>
+    </div>
+    <div class="cta-band reveal">
+      <div>
+        <h3>¿Listo para dar el paso?</h3>
+        <p>Escríbenos por WhatsApp y cuéntanos en qué servicio estás interesado.</p>
+      </div>
+      <a class="btn btn-primary" href="https://wa.me/5350963247?text=Hola%2C%20estoy%20interesado%20en%20los%20servicios%20de%20PDL%20IncubaJov." target="_blank" rel="noopener">Escribir por WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <img src="logo.png" alt="Logo IncubaJov">
+        </div>
+        <p>PDL Incubadora de Negocios Jovellanos. De la idea al negocio, en Jovellanos.</p>
+      </div>
+      <div>
+        <h5>Servicios</h5>
+        <ul id="foot-services"></ul>
+      </div>
+      <div>
+        <h5>Contacto</h5>
+        <ul>
+          <li><a href="tel:+5350963247">+53 5 0963247</a></li>
+          <li><a href="mailto:incubajov@proton.me">incubajov@proton.me</a></li>
+          <li><a href="https://www.facebook.com/incubajov/" target="_blank" rel="noopener">Facebook / IncubaJov</a></li>
+          <li>Calle 17 e/ 20 y 22 #2002, Jovellanos, Matanzas</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p>&copy; <span id="year"></span> <strong>PDL IncubaJov</strong> &mdash; Incubadora de Negocios Jovellanos. Todos los derechos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<a class="float-wa" href="https://wa.me/5350963247?text=Hola%2C%20estoy%20interesado%20en%20los%20servicios%20de%20PDL%20IncubaJov." target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.2-1.8-.9-2-1s-.5-.2-.7.2-.8 1-.9 1.2-.3.2-.6 0a8 8 0 0 1-2.4-1.5 9 9 0 0 1-1.6-2c-.2-.3 0-.5.1-.6l.5-.6c.2-.2.2-.3.3-.5s0-.4 0-.5l-.9-2.1c-.2-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.6 3.6 0 0 0-1.1 2.7 6.3 6.3 0 0 0 1.3 3.3 13.7 13.7 0 0 0 5.5 4.8 6.4 6.4 0 0 0 3.9.6 3.3 3.3 0 0 0 2.2-1.5 2.7 2.7 0 0 0 .2-1.5c-.1-.1-.3-.2-.6-.3z"/><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-2.9.8.8-2.8-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>
+</a>
+
+<script>
+const WA_NUMBER = "5350963247";
+const servicios = [
+  { t:"Promoción y formación de emprendedores",
+    d:"Capacitación, charlas y talleres para desarrollar tus habilidades y convertir tu idea en un proyecto sólido.",
+    i:'<path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/>' },
+  { t:"Elaboración de documentos legales",
+    d:"Confección de documentos legales para las nuevas propuestas de actores económicos y formas de gestión no estatal.",
+    i:'<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h4"/>' },
+  { t:"Acompañamiento en tu emprendimiento",
+    d:"Te guiamos durante todo el proceso de tu emprendimiento, paso a paso y a tu ritmo, hasta ponerlo en marcha.",
+    i:'<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="M12 12v.01"/>' },
+  { t:"Asesoramiento jurídico",
+    d:"Orientación legal especializada sobre contratos, normativas y todo lo que tu negocio necesita para operar correctamente.",
+    i:'<path d="M12 3v18"/><path d="M5 7h14"/><path d="M7 7 4 14h6L7 7z"/><path d="M17 7l-3 7h6l-3-7z"/><path d="M8 21h8"/>' },
+  { t:"Asesoramiento financiero",
+    d:"Análisis y planificación financiera: presupuestos, flujos de caja y estrategias para hacer crecer tu negocio.",
+    i:'<path d="M12 2v20"/><path d="M17 6.5c0-2-2.2-3.5-5-3.5s-5 1.5-5 3.5S9.2 10 12 10s5 1.5 5 3.5-2.2 3.5-5 3.5-5-1.5-5-3.5"/>' },
+  { t:"Asesoramiento de control interno",
+    d:"Diseñamos controles que protegen los recursos de tu negocio y garantizan procesos ordenados y confiables.",
+    i:'<path d="M12 22s8-3.5 8-10V5l-8-3-8 3v7c0 6.5 8 10 8 10z"/><path d="M9 12l2 2 4-4"/>' },
+  { t:"Asesoramiento contable",
+    d:"Registro, organización de la contabilidad y cumplimiento de las obligaciones contables de tu actividad.",
+    i:'<rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h8M8 15h5"/>' },
+  { t:"Intercambios y negocios con otras instituciones",
+    d:"Facilitamos alianzas, intercambios y negocios con otras instituciones, incubadoras y parques científicos.",
+    i:'<circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M15 20c0-2.4 1.6-4.4 3.8-4.4"/>' }
+];
+
+const waLink = (titulo) =>
+  "https://wa.me/" + WA_NUMBER + "?text=" +
+  encodeURIComponent("Hola, estoy interesado en el servicio de " + titulo + " en PDL IncubaJov. ¿Me pueden dar más información?");
+
+const cardsBox = document.getElementById("cards");
+cardsBox.innerHTML = servicios.map((s, k) => `
+  <article class="card reveal">
+    <span class="num">${String(k+1).padStart(2,"0")}</span>
+    <div class="icon"><svg viewBox="0 0 24 24">${s.i}</svg></div>
+    <h3>${s.t}</h3>
+    <p>${s.d}</p>
+    <a class="wa-btn" href="${waLink(s.t)}" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.2-1.8-.9-2-1s-.5-.2-.7.2-.8 1-.9 1.2-.3.2-.6 0a8 8 0 0 1-2.4-1.5 9 9 0 0 1-1.6-2c-.2-.3 0-.5.1-.6l.5-.6c.2-.2.2-.3.3-.5s0-.4 0-.5l-.9-2.1c-.2-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.6 3.6 0 0 0-1.1 2.7 6.3 6.3 0 0 0 1.3 3.3 13.7 13.7 0 0 0 5.5 4.8 6.4 6.4 0 0 0 3.9.6 3.3 3.3 0 0 0 2.2-1.5 2.7 2.7 0 0 0 .2-1.5c-.1-.1-.3-.2-.6-.3z"/><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-2.9.8.8-2.8-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>
+      Estoy interesado
+    </a>
+  </article>`).join("");
+
+document.getElementById("foot-services").innerHTML =
+  servicios.slice(0,5).map(s => `<li><a href="${waLink(s.t)}" target="_blank" rel="noopener">${s.t}</a></li>`).join("");
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+/* menú móvil */
+const burger = document.getElementById("burger"), menu = document.getElementById("menu");
+burger.addEventListener("click", () => menu.classList.toggle("open"));
+menu.querySelectorAll("a").forEach(a => a.addEventListener("click", () => menu.classList.remove("open")));
+
+/* header sombra */
+window.addEventListener("scroll", () => {
+  document.getElementById("header").classList.toggle("scrolled", window.scrollY > 20);
+});
+
+/* animación de aparición */
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) { setTimeout(() => e.target.classList.add("vis"), i * 70); obs.unobserve(e.target); }
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll(".reveal").forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
